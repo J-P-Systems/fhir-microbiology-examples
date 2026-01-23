@@ -1,0 +1,406 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "https://example.com/base/Patient/example",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example",
+        "identifier": [
+          {
+            "system": "http://hospital.example.org/patients",
+            "value": "12345"
+          }
+        ],
+        "name": [
+          {
+            "family": "Smith",
+            "given": ["John"]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1974-05-15"
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Organization/lab-example",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "lab-example",
+        "name": "Example Microbiology Laboratory",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov",
+                "display": "Healthcare Provider"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Specimen/urine-1",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "urine-1",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122575003",
+              "display": "Urine specimen"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "receivedTime": "2026-01-23T09:00:00Z",
+        "collection": {
+          "collectedDateTime": "2026-01-23T08:30:00Z"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/DiagnosticReport/micro-report-1",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "micro-report-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "MB",
+                "display": "Microbiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6463-4",
+              "display": "Bacteria identified in Specimen by Culture"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "2026-01-23T10:30:00Z",
+        "issued": "2026-01-23T14:45:00Z",
+        "performer": [
+          {
+            "reference": "Organization/lab-example"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "Specimen/urine-1"
+          }
+        ],
+        "result": [
+          {
+            "reference": "Observation/gram-stain-1"
+          },
+          {
+            "reference": "Observation/organism-1"
+          },
+          {
+            "reference": "Observation/susceptibility-ampicillin-1"
+          },
+          {
+            "reference": "Observation/susceptibility-ciprofloxacin-1"
+          },
+          {
+            "reference": "Observation/susceptibility-ceftriaxone-1"
+          },
+          {
+            "reference": "Observation/susceptibility-gentamicin-1"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/gram-stain-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "gram-stain-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "664-3",
+              "display": "Microscopic observation [Identifier] in Specimen by Gram stain"
+            }
+          ],
+          "text": "Gram Stain"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "2026-01-23T10:30:00Z",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "87172008",
+              "display": "Gram-negative rods"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/organism-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "organism-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6463-4",
+              "display": "Bacteria identified in Specimen by Culture"
+            }
+          ],
+          "text": "Organism Identification"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "2026-01-23T12:00:00Z",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "112283007",
+              "display": "Escherichia coli"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/susceptibility-ampicillin-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "susceptibility-ampicillin-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18864-9",
+              "display": "Ampicillin [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "2026-01-23T13:00:00Z",
+        "valueQuantity": {
+          "value": 16,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "R",
+                "display": "Resistant"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/susceptibility-ciprofloxacin-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "susceptibility-ciprofloxacin-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18906-8",
+              "display": "Ciprofloxacin [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "2026-01-23T13:00:00Z",
+        "valueQuantity": {
+          "value": 0.25,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "S",
+                "display": "Susceptible"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/susceptibility-ceftriaxone-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "susceptibility-ceftriaxone-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18895-3",
+              "display": "Ceftriaxone [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "2026-01-23T13:00:00Z",
+        "valueQuantity": {
+          "value": 0.5,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "S",
+                "display": "Susceptible"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/susceptibility-gentamicin-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "susceptibility-gentamicin-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18928-2",
+              "display": "Gentamicin [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "2026-01-23T13:00:00Z",
+        "valueQuantity": {
+          "value": 2,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "S",
+                "display": "Susceptible"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
