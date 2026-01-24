@@ -120,7 +120,10 @@
             "reference": "Observation/gram-stain-2"
           },
           {
-            "reference": "Observation/culture-panel"
+            "reference": "Observation/organism-a"
+          },
+          {
+            "reference": "Observation/organism-b"
           }
         ]
       }
@@ -156,46 +159,6 @@
         },
         "effectiveDateTime": "2026-01-23T11:00:00Z",
         "valueString": "Moderate gram-negative rods and moderate gram-positive cocci in chains"
-      }
-    },
-    {
-      "fullUrl": "https://example.com/base/Observation/culture-panel",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "culture-panel",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "6463-4",
-              "display": "Bacteria identified in Specimen by Culture"
-            }
-          ],
-          "text": "Imputed Culture Panel"
-        },
-        "subject": {
-          "reference": "Patient/example"
-        },
-        "effectiveDateTime": "2026-01-23T11:00:00Z",
-        "hasMember": [
-          {
-            "reference": "Observation/organism-a"
-          },
-          {
-            "reference": "Observation/organism-b"
-          }
-        ]
       }
     },
     {

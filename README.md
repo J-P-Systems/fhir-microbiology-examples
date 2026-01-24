@@ -1,8 +1,8 @@
 A set of microbiology results illustrating composition patterns in FHIR.
 
-* microExample_1.json: Flat. A DiagnosticReport with six Observations: one gram stain, one Organism Identification, and four drug susceptibilities.
-* microExample_2.json: Members. A DiagnosticReport with eleven Observations: one gram stain, two Organism Identifications, and four Susceptibilities per Organism. The Organism Identification observation uses hasMember relationships to group the susceptibility tests. Note that the hasMember relationship does not conduct context: it is purely syntactic.
-* microExample_3.json: Focus. Same as 2, but adding in the .focus property to make the association between Organism Identification and Susceptibility semantic.
-* microExample_4.json: Isolate. Same as 2, but adding in child Specimen instances to make the association between Organism Identification and Susceptibility semantic.
-* microExample_5.json: Groupers. Same as 2, but adding in imputed 'panel' classes to reiterate the non-semantic association already present in hasMember.
-
+* microExample_1_flat.json: A DiagnosticReport with six Observations: one gram stain, one Organism Identification, and four drug susceptibilities.
+* microExample_2_members.json: A DiagnosticReport with eleven Observations: one gram stain, two Organism Identifications, and four Susceptibilities per Organism. The Organism Identification observation uses hasMember relationships to group the susceptibility tests. Note that the hasMember relationship does not conduct context: it is syntactic.
+* microExample_3_focus.json: Same as 2, but adding in the .focus property to make the association between Organism Identification and Susceptibility semantic.
+* microExample_4_isolate.json: Same as 2, but adding in child Specimen instances to make the association between Organism Identification and Susceptibility semantic.
+* microExample_5_groupers.json: Same as 2, but adding in imputed 'panel' classes to assist in navigation. Like hasMember, this tactic does not conduct context and is non-semantic.
+* microExample_6_onegrouper.json: Same as 5, but only using the imputed panel at the susceptibility layer, per [R4 example](https://hl7.org/fhir/R4/diagnosticreport-examples.html#10.3.7.1.1).
