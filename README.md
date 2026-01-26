@@ -6,8 +6,6 @@ We believe our destination EHR is using pattern 7. We propose to adopt this patt
 
 Question 1: is there a problem with our intent to add .focus to this pattern?
 
-Note that in examples 2 and 3, the child observations are contained in both the DiagnosticReport.result and their respective .hasMember parents, hence the double hierarchy glyphs. 
-
 Question 2: do any observations that are members of other observations need explicit reference in the DiagnosticReport.result?
 
 ### Example 1: Flat (microExample_1_flat.json)
@@ -29,20 +27,22 @@ DiagnosticReport
 ### Example 2: Members (microExample_2_members.json)
 A DiagnosticReport with eleven Observations: one gram stain, two Organism Identifications, and four Susceptibilities per Organism. The Organism Identification observation uses hasMember relationships to group the susceptibility tests. Note that the hasMember relationship does not conduct context: it is syntactic.
 
-*Flat result + hasMember links from organisms to susceptibilities*
+*Organisms in result; susceptibilities via hasMember only*
 ```
 DiagnosticReport
 ├─ gram-stain-2 (mixed gram stain)
-├─ organism-a (E. coli)                          ─┬─ hasMember ─→ org-a susceptibilities
-├─ organism-a-susceptibility-ampicillin (R)       │
-├─ organism-a-susceptibility-ciprofloxacin (S)    │
-├─ organism-a-susceptibility-ceftriaxone (S)      │
-├─ organism-a-susceptibility-trimethoprim... (S) ─┘
-├─ organism-b (S. pyogenes)                      ─┬─ hasMember ─→ org-b susceptibilities
-├─ organism-b-susceptibility-vancomycin (S)       │
-├─ organism-b-susceptibility-ampicillin (S)       │
-├─ organism-b-susceptibility-linezolid (S)        │
-└─ organism-b-susceptibility-daptomycin (S)      ─┘
+├─ organism-a (E. coli)
+│   └─ hasMember:
+│       ├─ organism-a-susceptibility-ampicillin (R)
+│       ├─ organism-a-susceptibility-ciprofloxacin (S)
+│       ├─ organism-a-susceptibility-ceftriaxone (S)
+│       └─ organism-a-susceptibility-trimethoprim... (S)
+└─ organism-b (S. pyogenes)
+    └─ hasMember:
+        ├─ organism-b-susceptibility-vancomycin (S)
+        ├─ organism-b-susceptibility-ampicillin (S)
+        ├─ organism-b-susceptibility-linezolid (S)
+        └─ organism-b-susceptibility-daptomycin (S)
 ```
 
 ---
@@ -54,16 +54,18 @@ Same as 2, but adding in the .focus property to make the association between Org
 ```
 DiagnosticReport
 ├─ gram-stain-2 (mixed gram stain)
-├─ organism-2a (E. coli)                          ←─┬─ focus
-├─ org2a-susceptibility-ampicillin (R)      ───────┤
-├─ org2a-susceptibility-ciprofloxacin (S)   ───────┤
-├─ org2a-susceptibility-ceftriaxone (S)     ───────┤
-├─ org2a-susceptibility-trimethoprim... (S) ───────┘
-├─ organism-2b (S. pyogenes)                      ←─┬─ focus
-├─ org2b-susceptibility-vancomycin (S)      ───────┤
-├─ org2b-susceptibility-ampicillin (S)      ───────┤
-├─ org2b-susceptibility-linezolid (S)       ───────┤
-└─ org2b-susceptibility-daptomycin (S)      ───────┘
+├─ organism-2a (E. coli)                    ←─┐
+│   └─ hasMember:                             │
+│       ├─ org2a-susceptibility-ampicillin    │ focus
+│       ├─ org2a-susceptibility-ciprofloxacin │
+│       ├─ org2a-susceptibility-ceftriaxone   │
+│       └─ org2a-susceptibility-trimethoprim..┘
+└─ organism-2b (S. pyogenes)                ←─┐
+    └─ hasMember:                             │
+        ├─ org2b-susceptibility-vancomycin    │ focus
+        ├─ org2b-susceptibility-ampicillin    │
+        ├─ org2b-susceptibility-linezolid     │
+        └─ org2b-susceptibility-daptomycin   ─┘
 ```
 
 ---
