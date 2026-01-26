@@ -177,9 +177,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://loinc.org",
-              "code": "6463-4",
-              "display": "Bacteria identified in Specimen by Culture"
+              "system": "http://snomed.info/sct",
+              "code": "104178000",
+              "display": "Bacterial culture"
             }
           ],
           "text": "Imputed Culture Panel"
