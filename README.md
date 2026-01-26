@@ -5,4 +5,5 @@ A set of microbiology results illustrating composition patterns in FHIR.
 * microExample_3_focus.json: Same as 2, but adding in the .focus property to make the association between Organism Identification and Susceptibility semantic.
 * microExample_4_isolate.json: Same as 2, but adding in child Specimen instances to make the association between Organism Identification and Susceptibility semantic.
 * microExample_5_groupers.json: Same as 2, but adding in imputed 'panel' classes to assist in navigation, per [this pattern](https://confluence.hl7.org/spaces/OO/pages/161056620/Diagnostic+Module+-+R6+Updates?preview=%2F161056620%2F308973361%2FParent-Child+Structures+-+Microbiology.pptx). Like hasMember, this tactic does not conduct context and is non-semantic.
-* microExample_6_onegrouper.json: Same as 5, but only using the imputed panel at the susceptibility layer, per [R4 example](https://hl7.org/fhir/R4/diagnosticreport-examples.html#10.3.7.1.1).
+* microExample_6_onegrouper.json: Same as 5, but only using the imputed panel at the susceptibility layer. 
+* microExample_7_4layergroupers.json: Same as 5 but collapsing the groupers in to four layers per [R4 example](https://hl7.org/fhir/R4/diagnosticreport-examples.html#10.3.7.1.1).
