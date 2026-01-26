@@ -6,7 +6,10 @@ We believe our destination EHR is using pattern 7. We propose to adopt this patt
 
 Question 1: is there a problem with our intent to add .focus to this pattern?
 
-Question 2: do any observations that are members of other observations need explicit reference in the DiagnosticReport.result?
+Question 2: for imputed classes:
+    we can use the LOINC for the drug for all drugs found
+    we can use the LOINC for bacteria identified by culture for all bacteriology results
+    we need a more generic value for the top grouper; we propose SCT Bacterial Culture (104178000).
 
 ### Example 1: Flat (microExample_1_flat.json)
 A DiagnosticReport with six Observations: one gram stain, one Organism Identification, and four drug susceptibilities. Although this pattern seems coherent, in order to support other cases with multiple organisms, one of the other patterns will be necessary.
