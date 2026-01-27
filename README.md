@@ -169,3 +169,28 @@ DiagnosticReport
         ├─ organism-b-susceptibility-linezolid (S)
         └─ organism-b-susceptibility-daptomycin (S)
 ```
+
+---
+
+### Example 8: Isolate without hasMember (microExample_8_isolate_no_hasmember.json)
+Same as 4, but without any hasMember relationships. The association between organism identification and susceptibilities is made purely through the shared isolate Specimen reference. DiagnosticReport.result contains a flat list of all observations; consumers group by specimen to reconstruct the hierarchy.
+
+*Uses Specimen resources for isolates; no hasMember; flat result list*
+```
+Specimen/wound-1
+├─ Specimen/isolate-1 (parent)
+└─ Specimen/isolate-2 (parent)
+
+DiagnosticReport
+├─ gram-stain-8 (mixed gram stain)
+├─ organism-8a (E. coli)                 ──── specimen → isolate-1
+├─ org8a-susceptibility-ampicillin       ──── specimen → isolate-1
+├─ org8a-susceptibility-ciprofloxacin    ──── specimen → isolate-1
+├─ org8a-susceptibility-ceftriaxone      ──── specimen → isolate-1
+├─ org8a-susceptibility-trimethoprim...  ──── specimen → isolate-1
+├─ organism-8b (S. pyogenes)             ──── specimen → isolate-2
+├─ org8b-susceptibility-vancomycin       ──── specimen → isolate-2
+├─ org8b-susceptibility-ampicillin       ──── specimen → isolate-2
+├─ org8b-susceptibility-linezolid        ──── specimen → isolate-2
+└─ org8b-susceptibility-daptomycin       ──── specimen → isolate-2
+```

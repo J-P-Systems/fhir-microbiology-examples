@@ -1,0 +1,747 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "https://example.com/base/Patient/example",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example",
+        "identifier": [
+          {
+            "system": "http://hospital.example.org/patients",
+            "value": "67890"
+          }
+        ],
+        "name": [
+          {
+            "family": "Johnson",
+            "given": ["Mary"]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1982-03-22"
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Organization/lab-example",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "lab-example",
+        "name": "Example Microbiology Laboratory",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov",
+                "display": "Healthcare Provider"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Specimen/wound-1",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "wound-1",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "258531008",
+              "display": "Wound swab"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "receivedTime": "2026-01-23T10:00:00Z",
+        "collection": {
+          "collectedDateTime": "2026-01-23T09:30:00Z",
+          "bodySite": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "368209003",
+                "display": "Right upper arm"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Specimen/isolate-1",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "isolate-1",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429951000124103",
+              "display": "Bacterial isolate specimen",
+              "version": "http://snomed.info/sct/7310000124108"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "parent": [
+          {
+            "reference": "Specimen/wound-1"
+          }
+        ],
+        "receivedTime": "2026-01-23T12:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Specimen/isolate-2",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "isolate-2",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429951000124103",
+              "display": "Bacterial isolate specimen",
+              "version": "http://snomed.info/sct/7310000124108"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "parent": [
+          {
+            "reference": "Specimen/wound-1"
+          }
+        ],
+        "receivedTime": "2026-01-23T12:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/DiagnosticReport/micro-report-8",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "micro-report-8",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "MB",
+                "display": "Microbiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6463-4",
+              "display": "Bacteria identified in Specimen by Culture"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "2026-01-23T11:00:00Z",
+        "issued": "2026-01-23T16:30:00Z",
+        "performer": [
+          {
+            "reference": "Organization/lab-example"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "Specimen/wound-1"
+          }
+        ],
+        "result": [
+          {
+            "reference": "Observation/gram-stain-8"
+          },
+          {
+            "reference": "Observation/organism-8a"
+          },
+          {
+            "reference": "Observation/org8a-susceptibility-ampicillin"
+          },
+          {
+            "reference": "Observation/org8a-susceptibility-ciprofloxacin"
+          },
+          {
+            "reference": "Observation/org8a-susceptibility-ceftriaxone"
+          },
+          {
+            "reference": "Observation/org8a-susceptibility-trimethoprim-sulfamethoxazole"
+          },
+          {
+            "reference": "Observation/organism-8b"
+          },
+          {
+            "reference": "Observation/org8b-susceptibility-vancomycin"
+          },
+          {
+            "reference": "Observation/org8b-susceptibility-ampicillin"
+          },
+          {
+            "reference": "Observation/org8b-susceptibility-linezolid"
+          },
+          {
+            "reference": "Observation/org8b-susceptibility-daptomycin"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/gram-stain-8",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "gram-stain-8",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "664-3",
+              "display": "Microscopic observation [Identifier] in Specimen by Gram stain"
+            }
+          ],
+          "text": "Gram Stain"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "2026-01-23T11:00:00Z",
+        "valueString": "Moderate gram-negative rods and moderate gram-positive cocci in chains"
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/organism-8a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "organism-8a",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6463-4",
+              "display": "Bacteria identified in Specimen by Culture"
+            }
+          ],
+          "text": "Organism Identification"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/isolate-1"
+        },
+        "effectiveDateTime": "2026-01-23T14:00:00Z",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "112283007",
+              "display": "Escherichia coli"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Heavy growth"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/org8a-susceptibility-ampicillin",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "org8a-susceptibility-ampicillin",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18864-9",
+              "display": "Ampicillin [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/isolate-1"
+        },
+        "effectiveDateTime": "2026-01-23T15:00:00Z",
+        "valueQuantity": {
+          "value": 32,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "R",
+                "display": "Resistant"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/org8a-susceptibility-ciprofloxacin",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "org8a-susceptibility-ciprofloxacin",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18906-8",
+              "display": "Ciprofloxacin [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/isolate-1"
+        },
+        "effectiveDateTime": "2026-01-23T15:00:00Z",
+        "valueQuantity": {
+          "value": 0.5,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "S",
+                "display": "Susceptible"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/org8a-susceptibility-ceftriaxone",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "org8a-susceptibility-ceftriaxone",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18895-3",
+              "display": "Ceftriaxone [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/isolate-1"
+        },
+        "effectiveDateTime": "2026-01-23T15:00:00Z",
+        "valueQuantity": {
+          "value": 1,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "S",
+                "display": "Susceptible"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/org8a-susceptibility-trimethoprim-sulfamethoxazole",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "org8a-susceptibility-trimethoprim-sulfamethoxazole",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18998-5",
+              "display": "Trimethoprim+Sulfamethoxazole [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/isolate-1"
+        },
+        "effectiveDateTime": "2026-01-23T15:00:00Z",
+        "valueQuantity": {
+          "value": 0.5,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "S",
+                "display": "Susceptible"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/organism-8b",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "organism-8b",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6463-4",
+              "display": "Bacteria identified in Specimen by Culture"
+            }
+          ],
+          "text": "Organism Identification"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/isolate-2"
+        },
+        "effectiveDateTime": "2026-01-23T14:00:00Z",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80166006",
+              "display": "Streptococcus pyogenes"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Moderate growth"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/org8b-susceptibility-vancomycin",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "org8b-susceptibility-vancomycin",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19000-9",
+              "display": "Vancomycin [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/isolate-2"
+        },
+        "effectiveDateTime": "2026-01-23T15:00:00Z",
+        "valueQuantity": {
+          "value": 0.5,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "S",
+                "display": "Susceptible"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/org8b-susceptibility-ampicillin",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "org8b-susceptibility-ampicillin",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18864-9",
+              "display": "Ampicillin [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/isolate-2"
+        },
+        "effectiveDateTime": "2026-01-23T15:00:00Z",
+        "valueQuantity": {
+          "value": 0.25,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "S",
+                "display": "Susceptible"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/org8b-susceptibility-linezolid",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "org8b-susceptibility-linezolid",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29258-1",
+              "display": "Linezolid [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/isolate-2"
+        },
+        "effectiveDateTime": "2026-01-23T15:00:00Z",
+        "valueQuantity": {
+          "value": 1,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "S",
+                "display": "Susceptible"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Observation/org8b-susceptibility-daptomycin",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "org8b-susceptibility-daptomycin",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "35789-7",
+              "display": "Daptomycin [Susceptibility]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/isolate-2"
+        },
+        "effectiveDateTime": "2026-01-23T15:00:00Z",
+        "valueQuantity": {
+          "value": 0.5,
+          "unit": "ug/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "S",
+                "display": "Susceptible"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
