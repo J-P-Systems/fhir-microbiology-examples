@@ -233,6 +233,9 @@
         "subject": {
           "reference": "Patient/example"
         },
+        "specimen": {
+          "reference": "Specimen/wound-1"
+        },
         "effectiveDateTime": "2026-01-23T11:00:00Z",
         "valueString": "Moderate gram-negative rods and moderate gram-positive cocci in chains"
       }

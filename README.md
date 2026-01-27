@@ -182,7 +182,7 @@ Specimen/wound-1
 └─ Specimen/isolate-2 (parent)
 
 DiagnosticReport
-├─ gram-stain-8 (mixed gram stain)
+├─ gram-stain-8 (mixed gram stain)       ──── specimen → wound-1
 ├─ organism-8a (E. coli)                 ──── specimen → isolate-1
 ├─ org8a-susceptibility-ampicillin       ──── specimen → isolate-1
 ├─ org8a-susceptibility-ciprofloxacin    ──── specimen → isolate-1
