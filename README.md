@@ -90,13 +90,12 @@ DiagnosticReport
 │       ├─ org2a-susceptibility-ciprofloxacin   │ specimen → culture-isolate-1
 │       ├─ org2a-susceptibility-ceftriaxone     │
 │       └─ org2a-susceptibility-trimethoprim...─┘
-├─ organism-2b (S. pyogenes)          ──── specimen → culture-isolate-2
-│   └─ hasMember:
-│       ├─ org2b-susceptibility-vancomycin     ─┐
-│       ├─ org2b-susceptibility-ampicillin      │ specimen → culture-isolate-2
-│       ├─ org2b-susceptibility-linezolid       │
-│       └─ org2b-susceptibility-daptomycin     ─┘
-└─ (all susceptibilities also in DiagnosticReport.result)
+└─ organism-2b (S. pyogenes)          ──── specimen → culture-isolate-2
+    └─ hasMember:
+        ├─ org2b-susceptibility-vancomycin     ─┐
+        ├─ org2b-susceptibility-ampicillin      │ specimen → culture-isolate-2
+        ├─ org2b-susceptibility-linezolid       │
+        └─ org2b-susceptibility-daptomycin     ─┘
 ```
 
 ---

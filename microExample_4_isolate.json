@@ -174,31 +174,7 @@
             "reference": "Observation/organism-2a"
           },
           {
-            "reference": "Observation/org2a-susceptibility-ampicillin"
-          },
-          {
-            "reference": "Observation/org2a-susceptibility-ciprofloxacin"
-          },
-          {
-            "reference": "Observation/org2a-susceptibility-ceftriaxone"
-          },
-          {
-            "reference": "Observation/org2a-susceptibility-trimethoprim-sulfamethoxazole"
-          },
-          {
             "reference": "Observation/organism-2b"
-          },
-          {
-            "reference": "Observation/org2b-susceptibility-vancomycin"
-          },
-          {
-            "reference": "Observation/org2b-susceptibility-ampicillin"
-          },
-          {
-            "reference": "Observation/org2b-susceptibility-linezolid"
-          },
-          {
-            "reference": "Observation/org2b-susceptibility-daptomycin"
           }
         ]
       }
