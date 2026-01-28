@@ -1,5 +1,6 @@
 {
   "resourceType": "Bundle",
+  "id": "microExample-4-isolate",
   "type": "collection",
   "entry": [
     {
@@ -75,10 +76,61 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/DiagnosticReport/micro-report-5",
+      "fullUrl": "https://example.com/base/Specimen/culture-isolate-1",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "culture-isolate-1",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429951000124103",
+              "display": "Bacterial isolate specimen",
+              "version": "http://snomed.info/sct/7310000124108"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "parent": [
+          {
+            "reference": "Specimen/wound-1"
+          }
+        ],
+        "receivedTime": "2026-01-23T12:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/Specimen/culture-isolate-2",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "culture-isolate-2",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429951000124101",
+              "display": "Bacterial isolate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "parent": [
+          {
+            "reference": "Specimen/wound-1"
+          }
+        ],
+        "receivedTime": "2026-01-23T12:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "https://example.com/base/DiagnosticReport/micro-report-2",
       "resource": {
         "resourceType": "DiagnosticReport",
-        "id": "micro-report-5",
+        "id": "micro-report-2",
         "status": "final",
         "category": [
           {
@@ -120,10 +172,10 @@
             "reference": "Observation/gram-stain-2"
           },
           {
-            "reference": "Observation/organism-a"
+            "reference": "Observation/organism-2a"
           },
           {
-            "reference": "Observation/organism-b"
+            "reference": "Observation/organism-2b"
           }
         ]
       }
@@ -162,10 +214,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a",
+      "fullUrl": "https://example.com/base/Observation/organism-2a",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a",
+        "id": "organism-2a",
         "status": "final",
         "category": [
           {
@@ -190,6 +242,9 @@
         "subject": {
           "reference": "Patient/example"
         },
+        "specimen": {
+          "reference": "Specimen/culture-isolate-1"
+        },
         "effectiveDateTime": "2026-01-23T14:00:00Z",
         "valueCodeableConcept": {
           "coding": [
@@ -207,62 +262,25 @@
         ],
         "hasMember": [
           {
-            "reference": "Observation/susceptibility-panel-a"
+            "reference": "Observation/org2a-susceptibility-ampicillin"
+          },
+          {
+            "reference": "Observation/org2a-susceptibility-ciprofloxacin"
+          },
+          {
+            "reference": "Observation/org2a-susceptibility-ceftriaxone"
+          },
+          {
+            "reference": "Observation/org2a-susceptibility-trimethoprim-sulfamethoxazole"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/susceptibility-panel-a",
+      "fullUrl": "https://example.com/base/Observation/org2a-susceptibility-ampicillin",
       "resource": {
         "resourceType": "Observation",
-        "id": "susceptibility-panel-a",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "29576-6",
-              "display": "Bacterial susceptibility panel"
-            }
-          ],
-          "text": "Imputed Susceptibility Panel for Organism #1"
-        },
-        "subject": {
-          "reference": "Patient/example"
-        },
-        "effectiveDateTime": "2026-01-23T15:00:00Z",
-        "hasMember": [
-          {
-            "reference": "Observation/organism-a-susceptibility-ampicillin"
-          },
-          {
-            "reference": "Observation/organism-a-susceptibility-ciprofloxacin"
-          },
-          {
-            "reference": "Observation/organism-a-susceptibility-ceftriaxone"
-          },
-          {
-            "reference": "Observation/organism-a-susceptibility-trimethoprim-sulfamethoxazole"
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-ampicillin",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "organism-a-susceptibility-ampicillin",
+        "id": "org2a-susceptibility-ampicillin",
         "status": "final",
         "category": [
           {
@@ -286,6 +304,9 @@
         "subject": {
           "reference": "Patient/example"
         },
+        "specimen": {
+          "reference": "Specimen/culture-isolate-1"
+        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 32,
@@ -307,10 +328,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-ciprofloxacin",
+      "fullUrl": "https://example.com/base/Observation/org2a-susceptibility-ciprofloxacin",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-susceptibility-ciprofloxacin",
+        "id": "org2a-susceptibility-ciprofloxacin",
         "status": "final",
         "category": [
           {
@@ -334,6 +355,9 @@
         "subject": {
           "reference": "Patient/example"
         },
+        "specimen": {
+          "reference": "Specimen/culture-isolate-1"
+        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 0.5,
@@ -355,10 +379,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-ceftriaxone",
+      "fullUrl": "https://example.com/base/Observation/org2a-susceptibility-ceftriaxone",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-susceptibility-ceftriaxone",
+        "id": "org2a-susceptibility-ceftriaxone",
         "status": "final",
         "category": [
           {
@@ -382,6 +406,9 @@
         "subject": {
           "reference": "Patient/example"
         },
+        "specimen": {
+          "reference": "Specimen/culture-isolate-1"
+        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 1,
@@ -403,10 +430,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-trimethoprim-sulfamethoxazole",
+      "fullUrl": "https://example.com/base/Observation/org2a-susceptibility-trimethoprim-sulfamethoxazole",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-susceptibility-trimethoprim-sulfamethoxazole",
+        "id": "org2a-susceptibility-trimethoprim-sulfamethoxazole",
         "status": "final",
         "category": [
           {
@@ -430,6 +457,9 @@
         "subject": {
           "reference": "Patient/example"
         },
+        "specimen": {
+          "reference": "Specimen/culture-isolate-1"
+        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 0.5,
@@ -451,10 +481,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b",
+      "fullUrl": "https://example.com/base/Observation/organism-2b",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b",
+        "id": "organism-2b",
         "status": "final",
         "category": [
           {
@@ -479,6 +509,9 @@
         "subject": {
           "reference": "Patient/example"
         },
+        "specimen": {
+          "reference": "Specimen/culture-isolate-2"
+        },
         "effectiveDateTime": "2026-01-23T14:00:00Z",
         "valueCodeableConcept": {
           "coding": [
@@ -496,62 +529,25 @@
         ],
         "hasMember": [
           {
-            "reference": "Observation/susceptibility-panel-b"
+            "reference": "Observation/org2b-susceptibility-vancomycin"
+          },
+          {
+            "reference": "Observation/org2b-susceptibility-ampicillin"
+          },
+          {
+            "reference": "Observation/org2b-susceptibility-linezolid"
+          },
+          {
+            "reference": "Observation/org2b-susceptibility-daptomycin"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/susceptibility-panel-b",
+      "fullUrl": "https://example.com/base/Observation/org2b-susceptibility-vancomycin",
       "resource": {
         "resourceType": "Observation",
-        "id": "susceptibility-panel-b",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "29576-6",
-              "display": "Bacterial susceptibility panel"
-            }
-          ],
-          "text": "Imputed Susceptibility Panel for Organism #2"
-        },
-        "subject": {
-          "reference": "Patient/example"
-        },
-        "effectiveDateTime": "2026-01-23T15:00:00Z",
-        "hasMember": [
-          {
-            "reference": "Observation/organism-b-susceptibility-vancomycin"
-          },
-          {
-            "reference": "Observation/organism-b-susceptibility-ampicillin"
-          },
-          {
-            "reference": "Observation/organism-b-susceptibility-linezolid"
-          },
-          {
-            "reference": "Observation/organism-b-susceptibility-daptomycin"
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-vancomycin",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "organism-b-susceptibility-vancomycin",
+        "id": "org2b-susceptibility-vancomycin",
         "status": "final",
         "category": [
           {
@@ -575,6 +571,9 @@
         "subject": {
           "reference": "Patient/example"
         },
+        "specimen": {
+          "reference": "Specimen/culture-isolate-2"
+        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 0.5,
@@ -596,10 +595,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-ampicillin",
+      "fullUrl": "https://example.com/base/Observation/org2b-susceptibility-ampicillin",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b-susceptibility-ampicillin",
+        "id": "org2b-susceptibility-ampicillin",
         "status": "final",
         "category": [
           {
@@ -623,6 +622,9 @@
         "subject": {
           "reference": "Patient/example"
         },
+        "specimen": {
+          "reference": "Specimen/culture-isolate-2"
+        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 0.25,
@@ -644,10 +646,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-linezolid",
+      "fullUrl": "https://example.com/base/Observation/org2b-susceptibility-linezolid",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b-susceptibility-linezolid",
+        "id": "org2b-susceptibility-linezolid",
         "status": "final",
         "category": [
           {
@@ -671,6 +673,9 @@
         "subject": {
           "reference": "Patient/example"
         },
+        "specimen": {
+          "reference": "Specimen/culture-isolate-2"
+        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 1,
@@ -692,10 +697,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-daptomycin",
+      "fullUrl": "https://example.com/base/Observation/org2b-susceptibility-daptomycin",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b-susceptibility-daptomycin",
+        "id": "org2b-susceptibility-daptomycin",
         "status": "final",
         "category": [
           {
@@ -718,6 +723,9 @@
         },
         "subject": {
           "reference": "Patient/example"
+        },
+        "specimen": {
+          "reference": "Specimen/culture-isolate-2"
         },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {

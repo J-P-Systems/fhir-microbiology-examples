@@ -1,0 +1,19 @@
+# SUSHI / IG Publisher output
+fsh-generated/
+output/
+temp/
+template/
+input-cache/
+
+# Build artifacts
+*.log
+build.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp

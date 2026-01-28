@@ -1,0 +1,32 @@
+id: microbiology-examples
+canonical: http://example.org/fhir/micro-examples
+name: MicrobiologyExamples
+title: Microbiology Diagnostic Report Composition Patterns
+status: draft
+version: 0.1.0
+fhirVersion: 4.0.1
+copyrightYear: 2026+
+releaseLabel: ci-build
+
+publisher:
+  name: Example Organization
+  url: http://example.org
+
+description: >-
+  A set of microbiology results illustrating composition patterns in FHIR,
+  demonstrating various approaches to associating organism identifications
+  with their susceptibility results.
+
+dependencies:
+  hl7.fhir.us.core: 6.1.0
+
+pages:
+  index.md:
+    title: Home
+  patterns.md:
+    title: Composition Patterns
+
+menu:
+  Home: index.html
+  Patterns: patterns.html
+  Artifacts: artifacts.html

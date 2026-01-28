@@ -1,5 +1,6 @@
 {
   "resourceType": "Bundle",
+  "id": "microExample-5-groupers",
   "type": "collection",
   "entry": [
     {
@@ -120,10 +121,7 @@
             "reference": "Observation/gram-stain-2"
           },
           {
-            "reference": "Observation/organism-a-grouper"
-          },
-          {
-            "reference": "Observation/organism-b-grouper"
+            "reference": "Observation/culture-panel"
           }
         ]
       }
@@ -162,10 +160,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-grouper",
+      "fullUrl": "https://example.com/base/Observation/culture-panel",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-grouper",
+        "id": "culture-panel",
         "status": "final",
         "category": [
           {
@@ -185,27 +183,27 @@
               "display": "Bacterial culture"
             }
           ],
-          "text": "Imputed Organism #1 Grouper"
+          "text": "Imputed Culture Panel"
         },
         "subject": {
           "reference": "Patient/example"
         },
-        "effectiveDateTime": "2026-01-23T14:00:00Z",
+        "effectiveDateTime": "2026-01-23T11:00:00Z",
         "hasMember": [
           {
-            "reference": "Observation/organism-a-identification"
+            "reference": "Observation/organism-a"
           },
           {
-            "reference": "Observation/susceptibility-panel-a"
+            "reference": "Observation/organism-b"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-identification",
+      "fullUrl": "https://example.com/base/Observation/organism-a",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-identification",
+        "id": "organism-a",
         "status": "final",
         "category": [
           {
@@ -243,6 +241,11 @@
         "note": [
           {
             "text": "Organism #1 - Heavy growth"
+          }
+        ],
+        "hasMember": [
+          {
+            "reference": "Observation/susceptibility-panel-a"
           }
         ]
       }
@@ -486,50 +489,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b-grouper",
+      "fullUrl": "https://example.com/base/Observation/organism-b",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b-grouper",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "104178000",
-              "display": "Bacterial culture"
-            }
-          ],
-          "text": "Imputed Organism #2 Grouper"
-        },
-        "subject": {
-          "reference": "Patient/example"
-        },
-        "effectiveDateTime": "2026-01-23T14:00:00Z",
-        "hasMember": [
-          {
-            "reference": "Observation/organism-b-identification"
-          },
-          {
-            "reference": "Observation/susceptibility-panel-b"
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://example.com/base/Observation/organism-b-identification",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "organism-b-identification",
+        "id": "organism-b",
         "status": "final",
         "category": [
           {
@@ -567,6 +530,11 @@
         "note": [
           {
             "text": "Organism #2 - Moderate growth"
+          }
+        ],
+        "hasMember": [
+          {
+            "reference": "Observation/susceptibility-panel-b"
           }
         ]
       }

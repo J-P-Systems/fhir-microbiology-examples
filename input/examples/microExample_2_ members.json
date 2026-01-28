@@ -1,5 +1,6 @@
 {
   "resourceType": "Bundle",
+  "id": "microExample-2-members",
   "type": "collection",
   "entry": [
     {
@@ -75,62 +76,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Specimen/isolate-1",
-      "resource": {
-        "resourceType": "Specimen",
-        "id": "isolate-1",
-        "type": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "429951000124103",
-              "display": "Bacterial isolate specimen",
-              "version": "http://snomed.info/sct/7310000124108"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/example"
-        },
-        "parent": [
-          {
-            "reference": "Specimen/wound-1"
-          }
-        ],
-        "receivedTime": "2026-01-23T12:00:00Z"
-      }
-    },
-    {
-      "fullUrl": "https://example.com/base/Specimen/isolate-2",
-      "resource": {
-        "resourceType": "Specimen",
-        "id": "isolate-2",
-        "type": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "429951000124103",
-              "display": "Bacterial isolate specimen",
-              "version": "http://snomed.info/sct/7310000124108"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/example"
-        },
-        "parent": [
-          {
-            "reference": "Specimen/wound-1"
-          }
-        ],
-        "receivedTime": "2026-01-23T12:00:00Z"
-      }
-    },
-    {
-      "fullUrl": "https://example.com/base/DiagnosticReport/micro-report-8",
+      "fullUrl": "https://example.com/base/DiagnosticReport/micro-report-1",
       "resource": {
         "resourceType": "DiagnosticReport",
-        "id": "micro-report-8",
+        "id": "micro-report-1",
         "status": "final",
         "category": [
           {
@@ -169,46 +118,22 @@
         ],
         "result": [
           {
-            "reference": "Observation/gram-stain-8"
+            "reference": "Observation/gram-stain-2"
           },
           {
-            "reference": "Observation/organism-8a"
+            "reference": "Observation/organism-a"
           },
           {
-            "reference": "Observation/org8a-susceptibility-ampicillin"
-          },
-          {
-            "reference": "Observation/org8a-susceptibility-ciprofloxacin"
-          },
-          {
-            "reference": "Observation/org8a-susceptibility-ceftriaxone"
-          },
-          {
-            "reference": "Observation/org8a-susceptibility-trimethoprim-sulfamethoxazole"
-          },
-          {
-            "reference": "Observation/organism-8b"
-          },
-          {
-            "reference": "Observation/org8b-susceptibility-vancomycin"
-          },
-          {
-            "reference": "Observation/org8b-susceptibility-ampicillin"
-          },
-          {
-            "reference": "Observation/org8b-susceptibility-linezolid"
-          },
-          {
-            "reference": "Observation/org8b-susceptibility-daptomycin"
+            "reference": "Observation/organism-b"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/gram-stain-8",
+      "fullUrl": "https://example.com/base/Observation/gram-stain-2",
       "resource": {
         "resourceType": "Observation",
-        "id": "gram-stain-8",
+        "id": "gram-stain-2",
         "status": "final",
         "category": [
           {
@@ -233,18 +158,15 @@
         "subject": {
           "reference": "Patient/example"
         },
-        "specimen": {
-          "reference": "Specimen/wound-1"
-        },
         "effectiveDateTime": "2026-01-23T11:00:00Z",
         "valueString": "Moderate gram-negative rods and moderate gram-positive cocci in chains"
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-8a",
+      "fullUrl": "https://example.com/base/Observation/organism-a",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-8a",
+        "id": "organism-a",
         "status": "final",
         "category": [
           {
@@ -264,13 +186,10 @@
               "display": "Bacteria identified in Specimen by Culture"
             }
           ],
-          "text": "Organism Identification"
+          "text": "Organism #1 Identification"
         },
         "subject": {
           "reference": "Patient/example"
-        },
-        "specimen": {
-          "reference": "Specimen/isolate-1"
         },
         "effectiveDateTime": "2026-01-23T14:00:00Z",
         "valueCodeableConcept": {
@@ -284,16 +203,30 @@
         },
         "note": [
           {
-            "text": "Heavy growth"
+            "text": "Organism #1 - Heavy growth"
+          }
+        ],
+        "hasMember": [
+          {
+            "reference": "Observation/organism-a-susceptibility-ampicillin"
+          },
+          {
+            "reference": "Observation/organism-a-susceptibility-ciprofloxacin"
+          },
+          {
+            "reference": "Observation/organism-a-susceptibility-ceftriaxone"
+          },
+          {
+            "reference": "Observation/organism-a-susceptibility-trimethoprim-sulfamethoxazole"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org8a-susceptibility-ampicillin",
+      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-ampicillin",
       "resource": {
         "resourceType": "Observation",
-        "id": "org8a-susceptibility-ampicillin",
+        "id": "organism-a-susceptibility-ampicillin",
         "status": "final",
         "category": [
           {
@@ -317,9 +250,6 @@
         "subject": {
           "reference": "Patient/example"
         },
-        "specimen": {
-          "reference": "Specimen/isolate-1"
-        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 32,
@@ -341,10 +271,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org8a-susceptibility-ciprofloxacin",
+      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-ciprofloxacin",
       "resource": {
         "resourceType": "Observation",
-        "id": "org8a-susceptibility-ciprofloxacin",
+        "id": "organism-a-susceptibility-ciprofloxacin",
         "status": "final",
         "category": [
           {
@@ -368,9 +298,6 @@
         "subject": {
           "reference": "Patient/example"
         },
-        "specimen": {
-          "reference": "Specimen/isolate-1"
-        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 0.5,
@@ -392,10 +319,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org8a-susceptibility-ceftriaxone",
+      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-ceftriaxone",
       "resource": {
         "resourceType": "Observation",
-        "id": "org8a-susceptibility-ceftriaxone",
+        "id": "organism-a-susceptibility-ceftriaxone",
         "status": "final",
         "category": [
           {
@@ -419,9 +346,6 @@
         "subject": {
           "reference": "Patient/example"
         },
-        "specimen": {
-          "reference": "Specimen/isolate-1"
-        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 1,
@@ -443,10 +367,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org8a-susceptibility-trimethoprim-sulfamethoxazole",
+      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-trimethoprim-sulfamethoxazole",
       "resource": {
         "resourceType": "Observation",
-        "id": "org8a-susceptibility-trimethoprim-sulfamethoxazole",
+        "id": "organism-a-susceptibility-trimethoprim-sulfamethoxazole",
         "status": "final",
         "category": [
           {
@@ -470,9 +394,6 @@
         "subject": {
           "reference": "Patient/example"
         },
-        "specimen": {
-          "reference": "Specimen/isolate-1"
-        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 0.5,
@@ -494,10 +415,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-8b",
+      "fullUrl": "https://example.com/base/Observation/organism-b",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-8b",
+        "id": "organism-b",
         "status": "final",
         "category": [
           {
@@ -517,13 +438,10 @@
               "display": "Bacteria identified in Specimen by Culture"
             }
           ],
-          "text": "Organism Identification"
+          "text": "Organism #2 Identification"
         },
         "subject": {
           "reference": "Patient/example"
-        },
-        "specimen": {
-          "reference": "Specimen/isolate-2"
         },
         "effectiveDateTime": "2026-01-23T14:00:00Z",
         "valueCodeableConcept": {
@@ -537,16 +455,30 @@
         },
         "note": [
           {
-            "text": "Moderate growth"
+            "text": "Organism #2 - Moderate growth"
+          }
+        ],
+        "hasMember": [
+          {
+            "reference": "Observation/organism-b-susceptibility-vancomycin"
+          },
+          {
+            "reference": "Observation/organism-b-susceptibility-ampicillin"
+          },
+          {
+            "reference": "Observation/organism-b-susceptibility-linezolid"
+          },
+          {
+            "reference": "Observation/organism-b-susceptibility-daptomycin"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org8b-susceptibility-vancomycin",
+      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-vancomycin",
       "resource": {
         "resourceType": "Observation",
-        "id": "org8b-susceptibility-vancomycin",
+        "id": "organism-b-susceptibility-vancomycin",
         "status": "final",
         "category": [
           {
@@ -570,9 +502,6 @@
         "subject": {
           "reference": "Patient/example"
         },
-        "specimen": {
-          "reference": "Specimen/isolate-2"
-        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 0.5,
@@ -594,10 +523,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org8b-susceptibility-ampicillin",
+      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-ampicillin",
       "resource": {
         "resourceType": "Observation",
-        "id": "org8b-susceptibility-ampicillin",
+        "id": "organism-b-susceptibility-ampicillin",
         "status": "final",
         "category": [
           {
@@ -621,9 +550,6 @@
         "subject": {
           "reference": "Patient/example"
         },
-        "specimen": {
-          "reference": "Specimen/isolate-2"
-        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 0.25,
@@ -645,10 +571,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org8b-susceptibility-linezolid",
+      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-linezolid",
       "resource": {
         "resourceType": "Observation",
-        "id": "org8b-susceptibility-linezolid",
+        "id": "organism-b-susceptibility-linezolid",
         "status": "final",
         "category": [
           {
@@ -672,9 +598,6 @@
         "subject": {
           "reference": "Patient/example"
         },
-        "specimen": {
-          "reference": "Specimen/isolate-2"
-        },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
           "value": 1,
@@ -696,10 +619,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org8b-susceptibility-daptomycin",
+      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-daptomycin",
       "resource": {
         "resourceType": "Observation",
-        "id": "org8b-susceptibility-daptomycin",
+        "id": "organism-b-susceptibility-daptomycin",
         "status": "final",
         "category": [
           {
@@ -722,9 +645,6 @@
         },
         "subject": {
           "reference": "Patient/example"
-        },
-        "specimen": {
-          "reference": "Specimen/isolate-2"
         },
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "valueQuantity": {
