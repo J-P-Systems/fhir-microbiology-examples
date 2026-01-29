@@ -118,22 +118,22 @@
         ],
         "result": [
           {
-            "reference": "Observation/gram-stain-2"
+            "reference": "Observation/gram-stain"
           },
           {
-            "reference": "Observation/organism-a-grouper"
+            "reference": "Observation/organism-1-grouper"
           },
           {
-            "reference": "Observation/organism-b-grouper"
+            "reference": "Observation/organism-2-grouper"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/gram-stain-2",
+      "fullUrl": "https://example.com/base/Observation/gram-stain",
       "resource": {
         "resourceType": "Observation",
-        "id": "gram-stain-2",
+        "id": "gram-stain",
         "status": "final",
         "category": [
           {
@@ -159,14 +159,14 @@
           "reference": "Patient/example"
         },
         "effectiveDateTime": "2026-01-23T11:00:00Z",
-        "valueString": "Moderate gram-negative rods and moderate gram-positive cocci in chains"
+        "valueString": "Moderate gram-positive cocci in clusters and moderate gram-positive cocci in chains"
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-grouper",
+      "fullUrl": "https://example.com/base/Observation/organism-1-grouper",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-grouper",
+        "id": "organism-1-grouper",
         "status": "final",
         "category": [
           {
@@ -194,19 +194,19 @@
         "effectiveDateTime": "2026-01-23T14:00:00Z",
         "hasMember": [
           {
-            "reference": "Observation/organism-a-identification"
+            "reference": "Observation/organism-1-identification"
           },
           {
-            "reference": "Observation/susceptibility-panel-a"
+            "reference": "Observation/organism-1-susceptibility-panel"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-identification",
+      "fullUrl": "https://example.com/base/Observation/organism-1-identification",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-identification",
+        "id": "organism-1-identification",
         "status": "final",
         "category": [
           {
@@ -236,8 +236,8 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "112283007",
-              "display": "Escherichia coli"
+              "code": "3092008",
+              "display": "Staphylococcus aureus"
             }
           ]
         },
@@ -249,10 +249,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/susceptibility-panel-a",
+      "fullUrl": "https://example.com/base/Observation/organism-1-susceptibility-panel",
       "resource": {
         "resourceType": "Observation",
-        "id": "susceptibility-panel-a",
+        "id": "organism-1-susceptibility-panel",
         "status": "final",
         "category": [
           {
@@ -280,25 +280,25 @@
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "hasMember": [
           {
-            "reference": "Observation/organism-a-susceptibility-ampicillin"
+            "reference": "Observation/organism-1-susceptibility-ampicillin"
           },
           {
-            "reference": "Observation/organism-a-susceptibility-ciprofloxacin"
+            "reference": "Observation/organism-1-susceptibility-ciprofloxacin"
           },
           {
-            "reference": "Observation/organism-a-susceptibility-ceftriaxone"
+            "reference": "Observation/organism-1-susceptibility-ceftriaxone"
           },
           {
-            "reference": "Observation/organism-a-susceptibility-trimethoprim-sulfamethoxazole"
+            "reference": "Observation/organism-1-susceptibility-trimethoprim-sulfamethoxazole"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-ampicillin",
+      "fullUrl": "https://example.com/base/Observation/organism-1-susceptibility-ampicillin",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-susceptibility-ampicillin",
+        "id": "organism-1-susceptibility-ampicillin",
         "status": "final",
         "category": [
           {
@@ -343,10 +343,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-ciprofloxacin",
+      "fullUrl": "https://example.com/base/Observation/organism-1-susceptibility-ciprofloxacin",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-susceptibility-ciprofloxacin",
+        "id": "organism-1-susceptibility-ciprofloxacin",
         "status": "final",
         "category": [
           {
@@ -391,10 +391,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-ceftriaxone",
+      "fullUrl": "https://example.com/base/Observation/organism-1-susceptibility-ceftriaxone",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-susceptibility-ceftriaxone",
+        "id": "organism-1-susceptibility-ceftriaxone",
         "status": "final",
         "category": [
           {
@@ -439,10 +439,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-a-susceptibility-trimethoprim-sulfamethoxazole",
+      "fullUrl": "https://example.com/base/Observation/organism-1-susceptibility-trimethoprim-sulfamethoxazole",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-a-susceptibility-trimethoprim-sulfamethoxazole",
+        "id": "organism-1-susceptibility-trimethoprim-sulfamethoxazole",
         "status": "final",
         "category": [
           {
@@ -487,10 +487,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b-grouper",
+      "fullUrl": "https://example.com/base/Observation/organism-2-grouper",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b-grouper",
+        "id": "organism-2-grouper",
         "status": "final",
         "category": [
           {
@@ -518,19 +518,19 @@
         "effectiveDateTime": "2026-01-23T14:00:00Z",
         "hasMember": [
           {
-            "reference": "Observation/organism-b-identification"
+            "reference": "Observation/organism-2-identification"
           },
           {
-            "reference": "Observation/susceptibility-panel-b"
+            "reference": "Observation/organism-2-susceptibility-panel"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b-identification",
+      "fullUrl": "https://example.com/base/Observation/organism-2-identification",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b-identification",
+        "id": "organism-2-identification",
         "status": "final",
         "category": [
           {
@@ -573,10 +573,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/susceptibility-panel-b",
+      "fullUrl": "https://example.com/base/Observation/organism-2-susceptibility-panel",
       "resource": {
         "resourceType": "Observation",
-        "id": "susceptibility-panel-b",
+        "id": "organism-2-susceptibility-panel",
         "status": "final",
         "category": [
           {
@@ -604,25 +604,25 @@
         "effectiveDateTime": "2026-01-23T15:00:00Z",
         "hasMember": [
           {
-            "reference": "Observation/organism-b-susceptibility-vancomycin"
+            "reference": "Observation/organism-2-susceptibility-vancomycin"
           },
           {
-            "reference": "Observation/organism-b-susceptibility-ampicillin"
+            "reference": "Observation/organism-2-susceptibility-ampicillin"
           },
           {
-            "reference": "Observation/organism-b-susceptibility-linezolid"
+            "reference": "Observation/organism-2-susceptibility-linezolid"
           },
           {
-            "reference": "Observation/organism-b-susceptibility-daptomycin"
+            "reference": "Observation/organism-2-susceptibility-daptomycin"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-vancomycin",
+      "fullUrl": "https://example.com/base/Observation/organism-2-susceptibility-vancomycin",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b-susceptibility-vancomycin",
+        "id": "organism-2-susceptibility-vancomycin",
         "status": "final",
         "category": [
           {
@@ -667,10 +667,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-ampicillin",
+      "fullUrl": "https://example.com/base/Observation/organism-2-susceptibility-ampicillin",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b-susceptibility-ampicillin",
+        "id": "organism-2-susceptibility-ampicillin",
         "status": "final",
         "category": [
           {
@@ -715,10 +715,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-linezolid",
+      "fullUrl": "https://example.com/base/Observation/organism-2-susceptibility-linezolid",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b-susceptibility-linezolid",
+        "id": "organism-2-susceptibility-linezolid",
         "status": "final",
         "category": [
           {
@@ -763,10 +763,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-b-susceptibility-daptomycin",
+      "fullUrl": "https://example.com/base/Observation/organism-2-susceptibility-daptomycin",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-b-susceptibility-daptomycin",
+        "id": "organism-2-susceptibility-daptomycin",
         "status": "final",
         "category": [
           {

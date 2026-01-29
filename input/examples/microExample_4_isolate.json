@@ -169,22 +169,22 @@
         ],
         "result": [
           {
-            "reference": "Observation/gram-stain-2"
+            "reference": "Observation/gram-stain"
           },
           {
-            "reference": "Observation/organism-2a"
+            "reference": "Observation/organism-1-identification"
           },
           {
-            "reference": "Observation/organism-2b"
+            "reference": "Observation/organism-2-identification"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/gram-stain-2",
+      "fullUrl": "https://example.com/base/Observation/gram-stain",
       "resource": {
         "resourceType": "Observation",
-        "id": "gram-stain-2",
+        "id": "gram-stain",
         "status": "final",
         "category": [
           {
@@ -210,14 +210,14 @@
           "reference": "Patient/example"
         },
         "effectiveDateTime": "2026-01-23T11:00:00Z",
-        "valueString": "Moderate gram-negative rods and moderate gram-positive cocci in chains"
+        "valueString": "Moderate gram-positive cocci in clusters and moderate gram-positive cocci in chains"
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-2a",
+      "fullUrl": "https://example.com/base/Observation/organism-1-identification",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-2a",
+        "id": "organism-1-identification",
         "status": "final",
         "category": [
           {
@@ -250,8 +250,8 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "112283007",
-              "display": "Escherichia coli"
+              "code": "3092008",
+              "display": "Staphylococcus aureus"
             }
           ]
         },
@@ -262,25 +262,25 @@
         ],
         "hasMember": [
           {
-            "reference": "Observation/org2a-susceptibility-ampicillin"
+            "reference": "Observation/organism-1-susceptibility-ampicillin"
           },
           {
-            "reference": "Observation/org2a-susceptibility-ciprofloxacin"
+            "reference": "Observation/organism-1-susceptibility-ciprofloxacin"
           },
           {
-            "reference": "Observation/org2a-susceptibility-ceftriaxone"
+            "reference": "Observation/organism-1-susceptibility-ceftriaxone"
           },
           {
-            "reference": "Observation/org2a-susceptibility-trimethoprim-sulfamethoxazole"
+            "reference": "Observation/organism-1-susceptibility-trimethoprim-sulfamethoxazole"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org2a-susceptibility-ampicillin",
+      "fullUrl": "https://example.com/base/Observation/organism-1-susceptibility-ampicillin",
       "resource": {
         "resourceType": "Observation",
-        "id": "org2a-susceptibility-ampicillin",
+        "id": "organism-1-susceptibility-ampicillin",
         "status": "final",
         "category": [
           {
@@ -328,10 +328,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org2a-susceptibility-ciprofloxacin",
+      "fullUrl": "https://example.com/base/Observation/organism-1-susceptibility-ciprofloxacin",
       "resource": {
         "resourceType": "Observation",
-        "id": "org2a-susceptibility-ciprofloxacin",
+        "id": "organism-1-susceptibility-ciprofloxacin",
         "status": "final",
         "category": [
           {
@@ -379,10 +379,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org2a-susceptibility-ceftriaxone",
+      "fullUrl": "https://example.com/base/Observation/organism-1-susceptibility-ceftriaxone",
       "resource": {
         "resourceType": "Observation",
-        "id": "org2a-susceptibility-ceftriaxone",
+        "id": "organism-1-susceptibility-ceftriaxone",
         "status": "final",
         "category": [
           {
@@ -430,10 +430,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org2a-susceptibility-trimethoprim-sulfamethoxazole",
+      "fullUrl": "https://example.com/base/Observation/organism-1-susceptibility-trimethoprim-sulfamethoxazole",
       "resource": {
         "resourceType": "Observation",
-        "id": "org2a-susceptibility-trimethoprim-sulfamethoxazole",
+        "id": "organism-1-susceptibility-trimethoprim-sulfamethoxazole",
         "status": "final",
         "category": [
           {
@@ -481,10 +481,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/organism-2b",
+      "fullUrl": "https://example.com/base/Observation/organism-2-identification",
       "resource": {
         "resourceType": "Observation",
-        "id": "organism-2b",
+        "id": "organism-2-identification",
         "status": "final",
         "category": [
           {
@@ -529,25 +529,25 @@
         ],
         "hasMember": [
           {
-            "reference": "Observation/org2b-susceptibility-vancomycin"
+            "reference": "Observation/organism-2-susceptibility-vancomycin"
           },
           {
-            "reference": "Observation/org2b-susceptibility-ampicillin"
+            "reference": "Observation/organism-2-susceptibility-ampicillin"
           },
           {
-            "reference": "Observation/org2b-susceptibility-linezolid"
+            "reference": "Observation/organism-2-susceptibility-linezolid"
           },
           {
-            "reference": "Observation/org2b-susceptibility-daptomycin"
+            "reference": "Observation/organism-2-susceptibility-daptomycin"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org2b-susceptibility-vancomycin",
+      "fullUrl": "https://example.com/base/Observation/organism-2-susceptibility-vancomycin",
       "resource": {
         "resourceType": "Observation",
-        "id": "org2b-susceptibility-vancomycin",
+        "id": "organism-2-susceptibility-vancomycin",
         "status": "final",
         "category": [
           {
@@ -595,10 +595,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org2b-susceptibility-ampicillin",
+      "fullUrl": "https://example.com/base/Observation/organism-2-susceptibility-ampicillin",
       "resource": {
         "resourceType": "Observation",
-        "id": "org2b-susceptibility-ampicillin",
+        "id": "organism-2-susceptibility-ampicillin",
         "status": "final",
         "category": [
           {
@@ -646,10 +646,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org2b-susceptibility-linezolid",
+      "fullUrl": "https://example.com/base/Observation/organism-2-susceptibility-linezolid",
       "resource": {
         "resourceType": "Observation",
-        "id": "org2b-susceptibility-linezolid",
+        "id": "organism-2-susceptibility-linezolid",
         "status": "final",
         "category": [
           {
@@ -697,10 +697,10 @@
       }
     },
     {
-      "fullUrl": "https://example.com/base/Observation/org2b-susceptibility-daptomycin",
+      "fullUrl": "https://example.com/base/Observation/organism-2-susceptibility-daptomycin",
       "resource": {
         "resourceType": "Observation",
-        "id": "org2b-susceptibility-daptomycin",
+        "id": "organism-2-susceptibility-daptomycin",
         "status": "final",
         "category": [
           {

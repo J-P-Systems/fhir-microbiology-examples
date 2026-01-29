@@ -33,19 +33,19 @@ A DiagnosticReport with eleven Observations: one gram stain, two Organism Identi
 *Organisms in result; susceptibilities via hasMember only*
 ```
 DiagnosticReport
-├─ gram-stain-2 (mixed gram stain)
-├─ organism-a (E. coli)
+├─ gram-stain (mixed gram stain)
+├─ organism-1-identification (S. aureus)
 │   └─ hasMember:
-│       ├─ organism-a-susceptibility-ampicillin (R)
-│       ├─ organism-a-susceptibility-ciprofloxacin (S)
-│       ├─ organism-a-susceptibility-ceftriaxone (S)
-│       └─ organism-a-susceptibility-trimethoprim... (S)
-└─ organism-b (S. pyogenes)
+│       ├─ organism-1-susceptibility-oxacillin (S)
+│       ├─ organism-1-susceptibility-erythromycin (S)
+│       ├─ organism-1-susceptibility-clindamycin (S)
+│       └─ organism-1-susceptibility-trimethoprim... (S)
+└─ organism-2-identification (S. pyogenes)
     └─ hasMember:
-        ├─ organism-b-susceptibility-vancomycin (S)
-        ├─ organism-b-susceptibility-ampicillin (S)
-        ├─ organism-b-susceptibility-linezolid (S)
-        └─ organism-b-susceptibility-daptomycin (S)
+        ├─ organism-2-susceptibility-vancomycin (S)
+        ├─ organism-2-susceptibility-ampicillin (S)
+        ├─ organism-2-susceptibility-linezolid (S)
+        └─ organism-2-susceptibility-daptomycin (S)
 ```
 
 ---
@@ -56,19 +56,19 @@ Same as 2, but adding in the .focus property to make the association between Org
 *Same as #2 + susceptibilities have focus back to organism*
 ```
 DiagnosticReport
-├─ gram-stain-2 (mixed gram stain)
-├─ organism-2a (E. coli)                    ←─┐
-│   └─ hasMember:                             │
-│       ├─ org2a-susceptibility-ampicillin    │ focus
-│       ├─ org2a-susceptibility-ciprofloxacin │
-│       ├─ org2a-susceptibility-ceftriaxone   │
-│       └─ org2a-susceptibility-trimethoprim..┘
-└─ organism-2b (S. pyogenes)                ←─┐
-    └─ hasMember:                             │
-        ├─ org2b-susceptibility-vancomycin    │ focus
-        ├─ org2b-susceptibility-ampicillin    │
-        ├─ org2b-susceptibility-linezolid     │
-        └─ org2b-susceptibility-daptomycin   ─┘
+├─ gram-stain (mixed gram stain)
+├─ organism-1-identification (S. aureus)            ←─┐
+│   └─ hasMember:                                      │
+│       ├─ organism-1-susceptibility-oxacillin         │ focus
+│       ├─ organism-1-susceptibility-erythromycin      │
+│       ├─ organism-1-susceptibility-clindamycin       │
+│       └─ organism-1-susceptibility-trimethoprim...  ─┘
+└─ organism-2-identification (S. pyogenes)          ←─┐
+    └─ hasMember:                                      │
+        ├─ organism-2-susceptibility-vancomycin        │ focus
+        ├─ organism-2-susceptibility-ampicillin        │
+        ├─ organism-2-susceptibility-linezolid         │
+        └─ organism-2-susceptibility-daptomycin       ─┘
 ```
 
 ---
@@ -83,19 +83,19 @@ Specimen/wound-1
 └─ Specimen/culture-isolate-2 (parent)
 
 DiagnosticReport
-├─ gram-stain-2 (mixed gram stain)
-├─ organism-2a (E. coli)              ──── specimen → culture-isolate-1
+├─ gram-stain (mixed gram stain)
+├─ organism-1-identification (S. aureus)     ──── specimen → culture-isolate-1
 │   └─ hasMember:
-│       ├─ org2a-susceptibility-ampicillin     ─┐
-│       ├─ org2a-susceptibility-ciprofloxacin   │ specimen → culture-isolate-1
-│       ├─ org2a-susceptibility-ceftriaxone     │
-│       └─ org2a-susceptibility-trimethoprim...─┘
-└─ organism-2b (S. pyogenes)          ──── specimen → culture-isolate-2
+│       ├─ organism-1-susceptibility-ampicillin          ─┐
+│       ├─ organism-1-susceptibility-ciprofloxacin        │ specimen → culture-isolate-1
+│       ├─ organism-1-susceptibility-ceftriaxone          │
+│       └─ organism-1-susceptibility-trimethoprim...     ─┘
+└─ organism-2-identification (S. pyogenes)   ──── specimen → culture-isolate-2
     └─ hasMember:
-        ├─ org2b-susceptibility-vancomycin     ─┐
-        ├─ org2b-susceptibility-ampicillin      │ specimen → culture-isolate-2
-        ├─ org2b-susceptibility-linezolid       │
-        └─ org2b-susceptibility-daptomycin     ─┘
+        ├─ organism-2-susceptibility-vancomycin          ─┐
+        ├─ organism-2-susceptibility-ampicillin           │ specimen → culture-isolate-2
+        ├─ organism-2-susceptibility-linezolid            │
+        └─ organism-2-susceptibility-daptomycin          ─┘
 ```
 
 ---
@@ -106,20 +106,20 @@ Same as 2, but adding in imputed 'panel' classes to assist in navigation, per [t
 *Culture panel + susceptibility panel groupers*
 ```
 DiagnosticReport
-├─ gram-stain-2 (mixed gram stain)
+├─ gram-stain (mixed gram stain)
 └─ culture-panel (GROUPER - no value)
-    ├─ organism-a (E. coli)
-    │   └─ susceptibility-panel-a (GROUPER - no value)
-    │       ├─ organism-a-susceptibility-ampicillin (R)
-    │       ├─ organism-a-susceptibility-ciprofloxacin (S)
-    │       ├─ organism-a-susceptibility-ceftriaxone (S)
-    │       └─ organism-a-susceptibility-trimethoprim... (S)
-    └─ organism-b (S. pyogenes)
-        └─ susceptibility-panel-b (GROUPER - no value)
-            ├─ organism-b-susceptibility-vancomycin (S)
-            ├─ organism-b-susceptibility-ampicillin (S)
-            ├─ organism-b-susceptibility-linezolid (S)
-            └─ organism-b-susceptibility-daptomycin (S)
+    ├─ organism-1-identification (S. aureus)
+    │   └─ organism-1-susceptibility-panel (GROUPER - no value)
+    │       ├─ organism-1-susceptibility-ampicillin (R)
+    │       ├─ organism-1-susceptibility-ciprofloxacin (S)
+    │       ├─ organism-1-susceptibility-ceftriaxone (S)
+    │       └─ organism-1-susceptibility-trimethoprim... (S)
+    └─ organism-2-identification (S. pyogenes)
+        └─ organism-2-susceptibility-panel (GROUPER - no value)
+            ├─ organism-2-susceptibility-vancomycin (S)
+            ├─ organism-2-susceptibility-ampicillin (S)
+            ├─ organism-2-susceptibility-linezolid (S)
+            └─ organism-2-susceptibility-daptomycin (S)
 ```
 
 ---
@@ -130,19 +130,19 @@ Same as 5, but only using the imputed panel at the susceptibility layer.
 *Susceptibility panel grouper only; organisms direct in result*
 ```
 DiagnosticReport
-├─ gram-stain-2 (mixed gram stain)
-├─ organism-a (E. coli)
-│   └─ susceptibility-panel-a (GROUPER - no value)
-│       ├─ organism-a-susceptibility-ampicillin (R)
-│       ├─ organism-a-susceptibility-ciprofloxacin (S)
-│       ├─ organism-a-susceptibility-ceftriaxone (S)
-│       └─ organism-a-susceptibility-trimethoprim... (S)
-└─ organism-b (S. pyogenes)
-    └─ susceptibility-panel-b (GROUPER - no value)
-        ├─ organism-b-susceptibility-vancomycin (S)
-        ├─ organism-b-susceptibility-ampicillin (S)
-        ├─ organism-b-susceptibility-linezolid (S)
-        └─ organism-b-susceptibility-daptomycin (S)
+├─ gram-stain (mixed gram stain)
+├─ organism-1-identification (S. aureus)
+│   └─ organism-1-susceptibility-panel (GROUPER - no value)
+│       ├─ organism-1-susceptibility-ampicillin (R)
+│       ├─ organism-1-susceptibility-ciprofloxacin (S)
+│       ├─ organism-1-susceptibility-ceftriaxone (S)
+│       └─ organism-1-susceptibility-trimethoprim... (S)
+└─ organism-2-identification (S. pyogenes)
+    └─ organism-2-susceptibility-panel (GROUPER - no value)
+        ├─ organism-2-susceptibility-vancomycin (S)
+        ├─ organism-2-susceptibility-ampicillin (S)
+        ├─ organism-2-susceptibility-linezolid (S)
+        └─ organism-2-susceptibility-daptomycin (S)
 ```
 
 ---
@@ -153,21 +153,21 @@ Same as 5 but collapsing the groupers into four layers per [R4 example](https://
 *Organism groupers + susceptibility panel groupers; identification as sibling*
 ```
 DiagnosticReport
-├─ gram-stain-2 (mixed gram stain)
-├─ organism-a-grouper (GROUPER - no value)
-│   ├─ organism-a-identification (E. coli)
-│   └─ susceptibility-panel-a (GROUPER - no value)
-│       ├─ organism-a-susceptibility-ampicillin (R)
-│       ├─ organism-a-susceptibility-ciprofloxacin (S)
-│       ├─ organism-a-susceptibility-ceftriaxone (S)
-│       └─ organism-a-susceptibility-trimethoprim... (S)
-└─ organism-b-grouper (GROUPER - no value)
-    ├─ organism-b-identification (S. pyogenes)
-    └─ susceptibility-panel-b (GROUPER - no value)
-        ├─ organism-b-susceptibility-vancomycin (S)
-        ├─ organism-b-susceptibility-ampicillin (S)
-        ├─ organism-b-susceptibility-linezolid (S)
-        └─ organism-b-susceptibility-daptomycin (S)
+├─ gram-stain (mixed gram stain)
+├─ organism-1-grouper (GROUPER - no value)
+│   ├─ organism-1-identification (S. aureus)
+│   └─ organism-1-susceptibility-panel (GROUPER - no value)
+│       ├─ organism-1-susceptibility-ampicillin (R)
+│       ├─ organism-1-susceptibility-ciprofloxacin (S)
+│       ├─ organism-1-susceptibility-ceftriaxone (S)
+│       └─ organism-1-susceptibility-trimethoprim... (S)
+└─ organism-2-grouper (GROUPER - no value)
+    ├─ organism-2-identification (S. pyogenes)
+    └─ organism-2-susceptibility-panel (GROUPER - no value)
+        ├─ organism-2-susceptibility-vancomycin (S)
+        ├─ organism-2-susceptibility-ampicillin (S)
+        ├─ organism-2-susceptibility-linezolid (S)
+        └─ organism-2-susceptibility-daptomycin (S)
 ```
 
 ---
@@ -182,15 +182,45 @@ Specimen/wound-1
 └─ Specimen/isolate-2 (parent)
 
 DiagnosticReport
-├─ gram-stain-8 (mixed gram stain)       ──── specimen → wound-1
-├─ organism-8a (E. coli)                 ──── specimen → isolate-1
-├─ org8a-susceptibility-ampicillin       ──── specimen → isolate-1
-├─ org8a-susceptibility-ciprofloxacin    ──── specimen → isolate-1
-├─ org8a-susceptibility-ceftriaxone      ──── specimen → isolate-1
-├─ org8a-susceptibility-trimethoprim...  ──── specimen → isolate-1
-├─ organism-8b (S. pyogenes)             ──── specimen → isolate-2
-├─ org8b-susceptibility-vancomycin       ──── specimen → isolate-2
-├─ org8b-susceptibility-ampicillin       ──── specimen → isolate-2
-├─ org8b-susceptibility-linezolid        ──── specimen → isolate-2
-└─ org8b-susceptibility-daptomycin       ──── specimen → isolate-2
+├─ gram-stain (mixed gram stain)                        ──── specimen → wound-1
+├─ organism-1-identification (S. aureus)                ──── specimen → isolate-1
+├─ organism-1-susceptibility-ampicillin                 ──── specimen → isolate-1
+├─ organism-1-susceptibility-ciprofloxacin              ──── specimen → isolate-1
+├─ organism-1-susceptibility-ceftriaxone                ──── specimen → isolate-1
+├─ organism-1-susceptibility-trimethoprim...            ──── specimen → isolate-1
+├─ organism-2-identification (S. pyogenes)              ──── specimen → isolate-2
+├─ organism-2-susceptibility-vancomycin                 ──── specimen → isolate-2
+├─ organism-2-susceptibility-ampicillin                 ──── specimen → isolate-2
+├─ organism-2-susceptibility-linezolid                  ──── specimen → isolate-2
+└─ organism-2-susceptibility-daptomycin                 ──── specimen → isolate-2
+```
+
+---
+
+### Example 9: Flat with Optional Groupers (microExample_9_isolate_flat_plus.json)
+Same as 8, but adding imputed grouper observations (culture-panel, organism groupers, susceptibility panels) that consumers can optionally use for navigation. All observations remain directly in DiagnosticReport.result (flat), with groupers providing hasMember links for hierarchical traversal.
+
+*Flat result list + optional groupers with hasMember for hierarchy*
+```
+Specimen/wound-1
+├─ Specimen/isolate-1 (parent)
+└─ Specimen/isolate-2 (parent)
+
+DiagnosticReport.result (all flat):
+├─ gram-stain                                           ──── specimen → wound-1
+├─ culture-panel (GROUPER)                              ──── hasMember → organism-1-grouper, organism-2-grouper
+├─ organism-1-grouper (GROUPER)                         ──── hasMember → organism-1-identification, organism-1-susceptibility-panel
+├─ organism-1-identification (S. aureus)                ──── specimen → isolate-1
+├─ organism-1-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
+├─ organism-1-susceptibility-ampicillin                 ──── specimen → isolate-1
+├─ organism-1-susceptibility-ciprofloxacin              ──── specimen → isolate-1
+├─ organism-1-susceptibility-ceftriaxone                ──── specimen → isolate-1
+├─ organism-1-susceptibility-trimethoprim...            ──── specimen → isolate-1
+├─ organism-2-grouper (GROUPER)                         ──── hasMember → organism-2-identification, organism-2-susceptibility-panel
+├─ organism-2-identification (S. pyogenes)              ──── specimen → isolate-2
+├─ organism-2-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
+├─ organism-2-susceptibility-vancomycin                 ──── specimen → isolate-2
+├─ organism-2-susceptibility-ampicillin                 ──── specimen → isolate-2
+├─ organism-2-susceptibility-linezolid                  ──── specimen → isolate-2
+└─ organism-2-susceptibility-daptomycin                 ──── specimen → isolate-2
 ```
