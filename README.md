@@ -201,7 +201,9 @@ DiagnosticReport
 Same as 8, but adding imputed grouper observations (organism groupers, susceptibility panels) that consumers can optionally use for navigation. All observations remain directly in DiagnosticReport.result (flat), with groupers providing hasMember links for hierarchical traversal.
 
 *Flat result list + optional groupers with hasMember for hierarchy*
+
 *Graphic line represent .result relationships from DiagnosticReport*
+
 *Indentation represents .hasMember relationships among Observations*
 ```
 Specimen/wound-1
