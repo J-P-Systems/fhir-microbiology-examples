@@ -202,7 +202,7 @@ Same as 8, but adding imputed grouper observations (organism groupers, susceptib
 
 *Flat result list + optional groupers with hasMember for hierarchy*
 
-*Graphic line represent .result relationships from DiagnosticReport*
+*Graphic lines represent .result relationships from DiagnosticReport*
 
 *Indentation represents .hasMember relationships among Observations*
 ```
