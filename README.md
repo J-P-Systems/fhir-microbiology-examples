@@ -201,6 +201,8 @@ DiagnosticReport
 Same as 8, but adding imputed grouper observations (organism groupers, susceptibility panels) that consumers can optionally use for navigation. All observations remain directly in DiagnosticReport.result (flat), with groupers providing hasMember links for hierarchical traversal.
 
 *Flat result list + optional groupers with hasMember for hierarchy*
+*Graphic line represent .result relationships from DiagnosticReport*
+*Indentation represents .hasMember relationships among Observations*
 ```
 Specimen/wound-1
 ├─ Specimen/isolate-1 (parent)
@@ -209,17 +211,17 @@ Specimen/wound-1
 DiagnosticReport.result (all flat):
 ├─ gram-stain                                           ──── specimen → wound-1
 ├─ organism-1-grouper (GROUPER)                         ──── hasMember → organism-1-identification, organism-1-susceptibility-panel
-├─ organism-1-identification (S. aureus)                ──── specimen → isolate-1
-├─ organism-1-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
-├─ organism-1-susceptibility-ampicillin                 ──── specimen → isolate-1
-├─ organism-1-susceptibility-ciprofloxacin              ──── specimen → isolate-1
-├─ organism-1-susceptibility-ceftriaxone                ──── specimen → isolate-1
-├─ organism-1-susceptibility-trimethoprim...            ──── specimen → isolate-1
+├─   organism-1-identification (S. aureus)                ──── specimen → isolate-1
+├─     organism-1-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
+├─     organism-1-susceptibility-ampicillin                 ──── specimen → isolate-1
+├─     organism-1-susceptibility-ciprofloxacin              ──── specimen → isolate-1
+├─     organism-1-susceptibility-ceftriaxone                ──── specimen → isolate-1
+├─     organism-1-susceptibility-trimethoprim...            ──── specimen → isolate-1
 ├─ organism-2-grouper (GROUPER)                         ──── hasMember → organism-2-identification, organism-2-susceptibility-panel
-├─ organism-2-identification (S. pyogenes)              ──── specimen → isolate-2
-├─ organism-2-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
-├─ organism-2-susceptibility-vancomycin                 ──── specimen → isolate-2
-├─ organism-2-susceptibility-ampicillin                 ──── specimen → isolate-2
-├─ organism-2-susceptibility-linezolid                  ──── specimen → isolate-2
-└─ organism-2-susceptibility-daptomycin                 ──── specimen → isolate-2
+├─   organism-2-identification (S. pyogenes)              ──── specimen → isolate-2
+├─     organism-2-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
+├─     organism-2-susceptibility-vancomycin                 ──── specimen → isolate-2
+├─     organism-2-susceptibility-ampicillin                 ──── specimen → isolate-2
+├─     organism-2-susceptibility-linezolid                  ──── specimen → isolate-2
+└─     organism-2-susceptibility-daptomycin                 ──── specimen → isolate-2
 ```
