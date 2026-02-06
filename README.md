@@ -198,7 +198,7 @@ DiagnosticReport
 ---
 
 ### Example 9: Flat with Optional Groupers (microExample_9_isolate_flat_plus.json)
-Same as 8, but adding imputed grouper observations (culture-panel, organism groupers, susceptibility panels) that consumers can optionally use for navigation. All observations remain directly in DiagnosticReport.result (flat), with groupers providing hasMember links for hierarchical traversal.
+Same as 8, but adding imputed grouper observations (organism groupers, susceptibility panels) that consumers can optionally use for navigation. All observations remain directly in DiagnosticReport.result (flat), with groupers providing hasMember links for hierarchical traversal.
 
 *Flat result list + optional groupers with hasMember for hierarchy*
 ```
@@ -208,7 +208,6 @@ Specimen/wound-1
 
 DiagnosticReport.result (all flat):
 ├─ gram-stain                                           ──── specimen → wound-1
-├─ culture-panel (GROUPER)                              ──── hasMember → organism-1-grouper, organism-2-grouper
 ├─ organism-1-grouper (GROUPER)                         ──── hasMember → organism-1-identification, organism-1-susceptibility-panel
 ├─ organism-1-identification (S. aureus)                ──── specimen → isolate-1
 ├─ organism-1-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
