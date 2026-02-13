@@ -214,14 +214,14 @@ DiagnosticReport.result (all flat):
 ├─ gram-stain                                           ──── specimen → wound-1
 ├─ organism-1-grouper (GROUPER)                         ──── hasMember → organism-1-identification, organism-1-susceptibility-panel
 ├─   organism-1-identification (S. aureus)                ──── specimen → isolate-1
-├─     organism-1-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
+├─   organism-1-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
 ├─     organism-1-susceptibility-ampicillin                 ──── specimen → isolate-1
 ├─     organism-1-susceptibility-ciprofloxacin              ──── specimen → isolate-1
 ├─     organism-1-susceptibility-ceftriaxone                ──── specimen → isolate-1
 ├─     organism-1-susceptibility-trimethoprim...            ──── specimen → isolate-1
 ├─ organism-2-grouper (GROUPER)                         ──── hasMember → organism-2-identification, organism-2-susceptibility-panel
 ├─   organism-2-identification (S. pyogenes)              ──── specimen → isolate-2
-├─     organism-2-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
+├─   organism-2-susceptibility-panel (GROUPER)            ──── hasMember → susceptibility tests
 ├─     organism-2-susceptibility-vancomycin                 ──── specimen → isolate-2
 ├─     organism-2-susceptibility-ampicillin                 ──── specimen → isolate-2
 ├─     organism-2-susceptibility-linezolid                  ──── specimen → isolate-2
