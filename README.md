@@ -202,9 +202,11 @@ Same as 8, but adding imputed grouper observations (organism groupers, susceptib
 
 *Flat result list + optional groupers with hasMember for hierarchy*
 
-*Graphic lines represent .result relationships from DiagnosticReport*
+*Graphic lines represent .result relationships from DiagnosticReport*: these are not semantic
 
-*Indentation represents .hasMember relationships among Observations*
+*Indentation represents .hasMember relationships among Observations*: these are not semantic
+
+*Specimen annotation arrows (→) represent semantic relationships among Observations*
 ```
 Specimen/wound-1
 ├─ Specimen/isolate-1 (parent)
